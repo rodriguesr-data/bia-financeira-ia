@@ -1,0 +1,4 @@
+# Dependências futuras (opcional)
+# openai
+# gtts
+# streamlit
