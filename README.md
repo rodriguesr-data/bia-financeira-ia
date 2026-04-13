@@ -1,103 +1,120 @@
-# 🎓 Edu - Educador Financeiro Inteligente
+# 💰 BIA Financeira com IA
 
-> Agente de IA Generativa que ensina conceitos de finanças pessoais de forma simples e personalizada, usando os próprios dados do cliente como exemplos práticos.
+Assistente virtual financeira desenvolvida em Python que simula interações inteligentes com o usuário, permitindo consultas, explicações e simulações financeiras de forma simples, clara e interativa.
 
-## 💡 O Que é o Edu?
+---
 
-O Edu é um educador financeiro que **ensina**, não recomenda. Ele explica conceitos como reserva de emergência, tipos de investimentos e análise de gastos usando uma abordagem didática e exemplos concretos baseados no perfil do cliente.
+## 🚀 Funcionalidades
 
-**O que o Edu faz:**
-- ✅ Explica conceitos financeiros de forma simples
-- ✅ Usa dados do cliente como exemplos práticos
-- ✅ Responde dúvidas sobre produtos financeiros
-- ✅ Analisa padrões de gastos de forma educativa
+- 💬 Chat com perguntas em linguagem natural  
+- 📊 Simulação de investimentos  
+- 💵 Cálculo de saldo (receitas e despesas)  
+- 🧠 Armazenamento de contexto (memória simples da conversa)  
+- 📚 FAQ sobre produtos financeiros  
 
-**O que o Edu NÃO faz:**
-- ❌ Não recomenda investimentos específicos
-- ❌ Não acessa dados bancários sensíveis
-- ❌ Não substitui um profissional certificado
+---
 
-## 🏗️ Arquitetura
+## 🧠 Tecnologias Utilizadas
 
-```mermaid
-flowchart TD
-    A[Usuário] --> B[Streamlit]
-    B --> C[Ollama - LLM Local]
-    C --> D[Base de Conhecimento]
-    D --> C
-    C --> E[Resposta Educativa]
-```
+- Python  
+- Estruturas de dados (listas, dicionários)  
+- Lógica de programação  
+- Conceitos de Inteligência Artificial  
+- Organização modular de código  
 
-**Stack:**
-- Interface: Streamlit
-- LLM: Ollama (modelo local `gpt-oss`)
-- Dados: JSON/CSV mockados
+---
 
 ## 📁 Estrutura do Projeto
 
 ```
-├── data/                          # Base de conhecimento
-│   ├── perfil_investidor.json     # Perfil do cliente
-│   ├── transacoes.csv             # Histórico financeiro
-│   ├── historico_atendimento.csv  # Interações anteriores
-│   └── produtos_financeiros.json  # Produtos para ensino
-│
-├── docs/                          # Documentação completa
-│   ├── 01-documentacao-agente.md  # Caso de uso e persona
-│   ├── 02-base-conhecimento.md    # Estratégia de dados
-│   ├── 03-prompts.md              # System prompt e exemplos
-│   ├── 04-metricas.md             # Avaliação de qualidade
-│   └── 05-pitch.md                # Apresentação do projeto
-│
-└── src/
-    └── app.py                     # Aplicação Streamlit
+bia-financeira-ia/
+ ├── app/
+ │    ├── main.py
+ │    ├── chatbot.py
+ │    ├── simulador.py
+ │    └── contexto.py
+ ├── README.md
+ └── requirements.txt
 ```
 
-## 🚀 Como Executar
+---
 
-### 1. Instalar Ollama
+## 💡 Exemplo de Uso
+
+### Simulação de investimento
+
+```
+Você: simular investimento
+Valor: 1000
+Taxa: 0.1
+Tempo: 1
+
+BIA: Valor final: R$1100.00
+```
+
+### Cálculo de saldo
+
+```
+Você: saldo
+Receitas: 2000 500
+Despesas: 1000 200
+
+BIA: Saldo: R$1300.00
+```
+
+---
+
+## ▶️ Como Executar o Projeto
+
+1. Clone o repositório:
 
 ```bash
-# Baixar em: ollama.com
-ollama pull gpt-oss
-ollama serve
+git clone https://github.com/rodriguesr-data/bia-financeira-ia.git
 ```
 
-### 2. Instalar Dependências
+2. Acesse a pasta do projeto:
 
 ```bash
-pip install streamlit pandas requests
+cd bia-financeira-ia
 ```
 
-### 3. Rodar o Edu
+3. Execute o programa:
 
 ```bash
-streamlit run src/app.py
+python app/main.py
 ```
 
-## 🎯 Exemplo de Uso
+---
 
-**Pergunta:** "O que é CDI?"  
-**Edu:** "CDI é uma taxa de referência usada pelos bancos. Quando um investimento rende '100% do CDI', significa que ele acompanha essa taxa. Hoje o CDI está próximo da Selic. Quer que eu explique a diferença entre os dois?"
+## 🎯 Objetivo do Projeto
 
-**Pergunta:** "Onde estou gastando mais?"  
-**Edu:** "Olhando suas transações de outubro, sua maior despesa é moradia (R$ 1.380), seguida de alimentação (R$ 570). Juntas, representam quase 80% dos seus gastos. Isso é bem comum! Quer que eu explique algumas estratégias de organização?"
+Este projeto foi desenvolvido com o objetivo de aplicar na prática conceitos de:
 
-## 📊 Métricas de Avaliação
+- Inteligência Artificial  
+- Manipulação de dados  
+- Experiência do usuário (UX)  
+- Desenvolvimento em Python  
 
-| Métrica | Objetivo |
-|---------|----------|
-| **Assertividade** | O agente responde o que foi perguntado? |
-| **Segurança** | Evita inventar informações (anti-alucinação)? |
-| **Coerência** | A resposta é adequada ao perfil do cliente? |
+Simulando uma assistente financeira capaz de auxiliar usuários na compreensão e tomada de decisões financeiras.
 
-## 🎬 Diferenciais
+---
 
-- **Personalização:** Usa os dados do próprio cliente nos exemplos
-- **100% Local:** Roda com Ollama, sem enviar dados para APIs externas
-- **Educativo:** Foco em ensinar, não em vender produtos
-- **Seguro:** Estratégias de anti-alucinação documentadas
+## 📌 Possíveis Melhorias
 
-## 📝 Documentação Completa
+- Integração com API de IA (ex: ChatGPT)  
+- Interface web com Streamlit  
+- Persistência de dados em banco  
+- Simulações financeiras mais avançadas  
 
-Toda a documentação técnica, estratégias de prompt e casos de teste estão disponíveis na pasta [`docs/`](./docs/).
+---
+
+## 📦 Requisitos
+
+Atualmente, o projeto não possui dependências externas além do Python padrão.
+
+---
+
+## 👨‍💻 Autor
+
+Rodrigo Rodrigues  
+📧 rodrigo.rodrigues11780@gmail.com
